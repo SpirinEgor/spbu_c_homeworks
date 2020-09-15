@@ -2,6 +2,7 @@
 
 #include "../library/commonUtils/numericOperations.h"
 
-int main() {
+int main()
+{
     printf("%d\n", max(1, 3));
 }
