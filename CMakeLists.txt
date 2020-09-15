@@ -5,8 +5,10 @@ set(CMAKE_C_STANDARD 11)
 
 set(SOURCE_LIB
     library/commonUtils/numericOperations.c
-)
+        homework_1/task_3.c homework_1/task_1.c)
+
 add_library(library ${SOURCE_LIB})
+
 
 add_executable(task_1. homework_!/task_1.c)
 
