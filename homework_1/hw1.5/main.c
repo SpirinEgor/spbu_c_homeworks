@@ -1,21 +1,24 @@
-#include <stdio.h>
 #include <malloc.h>
 #include <stdbool.h>
+#include <stdio.h>
 
-void swap(int *a, int *b) {
+void swap(int* a, int* b)
+{
     int tmp = *a;
     *a = *b;
     *b = tmp;
 }
 
-void siftUp(int *numbers, int position) {
+void siftUp(int* numbers, int position)
+{
     while (position != 0 && numbers[position] > numbers[(position - 1) / 2]) {
         swap(&numbers[position], &numbers[(position - 1) / 2]);
         position = (position - 1) / 2;
     }
 }
 
-void siftDown(int *numbers, int n, int position) {
+void siftDown(int* numbers, int n, int position)
+{
     int next = position * 2 + 1;
     bool isHeap = false;
     while (next < n && !isHeap) {
@@ -33,13 +36,15 @@ void siftDown(int *numbers, int n, int position) {
     }
 }
 
-void buildHeap(int *numbers, int n) {
+void buildHeap(int* numbers, int n)
+{
     for (int i = n / 2; i >= 0; --i) {
         siftDown(numbers, n, i);
     }
 }
 
-int findSeveralMax(int *numbers, int n, bool *isFound) {
+int findSeveralMax(int* numbers, int n, bool* isFound)
+{
     buildHeap(numbers, n);
 
     *isFound = false;
@@ -69,7 +74,7 @@ int main()
     printf("Enter the length of array :\n");
     scanf("%d", &n);
 
-    int *numbers = (int*)malloc(n * sizeof(int));
+    int* numbers = (int*)malloc(n * sizeof(int));
     printf("Enter the array :\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d", &numbers[i]);
