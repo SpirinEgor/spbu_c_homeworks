@@ -1,13 +1,14 @@
-#include <stdio.h>
 #include <malloc.h>
 #include <stdbool.h>
+#include <stdio.h>
 
-int main() {
+int main()
+{
     int n = 0;
     printf("Enter the number :\n");
     scanf("%d", &n);
 
-    bool *isChecked = (bool*)malloc(n * sizeof(bool));
+    bool* isChecked = (bool*)malloc(n * sizeof(bool));
     for (int i = 0; i < n; ++i) {
         isChecked[i] = false;
     }

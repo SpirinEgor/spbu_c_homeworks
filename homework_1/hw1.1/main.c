@@ -1,7 +1,7 @@
 #include <malloc.h>
 #include <stdio.h>
 
-void showBySpiral(int **numbers, int n)
+void showBySpiral(int** numbers, int n)
 {
     const int firstIndex = n / 2;
     printf("%d", numbers[firstIndex][firstIndex]);
