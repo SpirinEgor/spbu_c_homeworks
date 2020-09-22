@@ -1,7 +1,8 @@
-#include <stdio.h>
 #include <malloc.h>
+#include <stdio.h>
 
-void showBySpiral(int **numbers, int n) {
+void showBySpiral(int **numbers, int n)
+{
     const int firstIndex = n / 2;
     printf("%d", numbers[firstIndex][firstIndex]);
     int leftBorder = firstIndex;
@@ -24,7 +25,7 @@ void showBySpiral(int **numbers, int n) {
         }
         downBorder++;
 
-        while (i >= leftBorder){
+        while (i >= leftBorder) {
             printf("%3d", numbers[j][i]);
             i--;
         }
@@ -38,12 +39,13 @@ void showBySpiral(int **numbers, int n) {
     }
 }
 
-int main() {
+int main()
+{
     int n = 0;
     printf("Enter n :\n");
     scanf("%d", &n);
 
-    int **numbers = (int**)malloc(n * sizeof(int*));
+    int** numbers = (int**)malloc(n * sizeof(int*));
     for (int i = 0; i < n; ++i) {
         numbers[i] = (int*)malloc(n * sizeof(int));
     }
