@@ -29,8 +29,7 @@ void siftDown(int* numbers, int n, int position)
             swap(&numbers[next], &numbers[position]);
             position = next;
             next = position * 2 + 1;
-        }
-        else {
+        } else {
             isHeap = true;
         }
     }
@@ -57,13 +56,12 @@ int findSeveralMax(int* numbers, int n, bool* isFound)
             *isFound = true;
             severalMax = numbers[0];
         }
-    ++i;
+        ++i;
     }
 
     if (*isFound) {
         return severalMax;
-    }
-    else {
+    } else {
         return -1;
     }
 }
@@ -85,8 +83,7 @@ int main()
 
     if (isFound) {
         printf("The maximum that is contained more than once is : %d", severalMax);
-    }
-    else {
+    } else {
         printf("The maximum that is contained more than once is not found");
     }
 
