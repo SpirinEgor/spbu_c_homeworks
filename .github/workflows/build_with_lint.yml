@@ -1,4 +1,4 @@
-name: Build
+name: Build_with_lint
 
 on:
   push:
