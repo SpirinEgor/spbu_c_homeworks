@@ -14,25 +14,25 @@ void showBySpiral(int** numbers, int n)
 
     while (j >= 0) {
         while (i <= rightBorder) {
-            printf("%3d", numbers[j][i]);
+            printf("%d ", numbers[j][i]);
             i++;
         }
         rightBorder++;
 
         while (j <= downBorder) {
-            printf("%3d", numbers[j][i]);
+            printf("%d ", numbers[j][i]);
             j++;
         }
         downBorder++;
 
         while (i >= leftBorder) {
-            printf("%3d", numbers[j][i]);
+            printf("%d ", numbers[j][i]);
             i--;
         }
         leftBorder--;
 
         while (j >= upBorder) {
-            printf("%3d", numbers[j][i]);
+            printf("%d ", numbers[j][i]);
             j--;
         }
         upBorder--;
