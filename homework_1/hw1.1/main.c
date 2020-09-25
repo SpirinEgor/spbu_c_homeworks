@@ -45,9 +45,9 @@ int main()
     printf("Enter n :\n");
     scanf("%d", &n);
 
-    int** numbers = (int**)malloc(n * sizeof(int*));
+    int** numbers = (int**)calloc(n, sizeof(int*));
     for (int i = 0; i < n; ++i) {
-        numbers[i] = (int*)malloc(n * sizeof(int));
+        numbers[i] = (int*)calloc(n, sizeof(int));
     }
 
     printf("Enter n x n array :\n");
