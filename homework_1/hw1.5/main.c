@@ -42,28 +42,24 @@ void buildHeap(int* numbers, int n)
     }
 }
 
-int findSeveralMax(int* numbers, int n, bool* isFound)
+bool findSeveralMax(int* numbers, int n, int* result)
 {
     buildHeap(numbers, n);
 
-    *isFound = false;
+    bool isFound = false;
     int i = 0;
-    int severalMax = 0;
-    while (i < n - 1 && !(*isFound)) {
+    *result = -1;
+    while (i < n - 1 && !(isFound)) {
         swap(&numbers[n - 1 - i], &numbers[0]);
         siftDown(numbers, n - i - 1, 0);
         if (numbers[0] == numbers[n - i - 1]) {
-            *isFound = true;
-            severalMax = numbers[0];
+            isFound = true;
+            *result = numbers[0];
         }
         ++i;
     }
 
-    if (*isFound) {
-        return severalMax;
-    } else {
-        return -1;
-    }
+    return isFound;
 }
 
 int main()
@@ -78,11 +74,9 @@ int main()
         scanf("%d", &numbers[i]);
     }
 
-    bool isFound = false;
-    int severalMax = findSeveralMax(numbers, n, &isFound);
-
-    if (isFound) {
-        printf("The maximum that is contained more than once is : %d", severalMax);
+    int result = 0;
+    if (findSeveralMax(numbers, n, &result)) {
+        printf("The maximum that is contained more than once is : %d", result);
     } else {
         printf("The maximum that is contained more than once is not found");
     }
