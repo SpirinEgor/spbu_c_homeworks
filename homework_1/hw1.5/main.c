@@ -1,5 +1,5 @@
-#include <malloc.h>
 #include <stdbool.h>
+#include <malloc.h>
 #include <stdio.h>
 #include "../../library/commonUtils/heap.h"
 
