@@ -1,13 +1,6 @@
-#include "../../library/commonUtils/numericOperations.h"
+#include "../../library/commonUtils/arrayOperations.h"
 #include <malloc.h>
 #include <stdio.h>
-
-void reverseArray(int* numbers, int first, int last)
-{
-    for (int i = 0; i <= (last - first) / 2; ++i) {
-        swap(&numbers[first + i], &numbers[last - i]);
-    }
-}
 
 int main()
 {

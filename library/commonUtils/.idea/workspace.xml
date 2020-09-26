@@ -28,11 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21c7b594-552f-4129-a124-516f23e08d4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/heap.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../homework_1/hw1.5/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../homework_1/hw1.5/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numericOperations.c" beforeDir="false" afterPath="$PROJECT_DIR$/numericOperations.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numericOperations.h" beforeDir="false" afterPath="$PROJECT_DIR$/numericOperations.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../homework_1/hw1.2/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../homework_1/hw1.2/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +52,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../homework_1/hw1.5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../homework_1/hw1.2" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -73,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601134443876</updated>
       <workItem from="1601134444926" duration="1562000" />
+      <workItem from="1601142829242" duration="472000" />
     </task>
     <servers />
   </component>
@@ -89,11 +87,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601136016659">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601143303279">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601136016659" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601143303279" />
   </component>
 </project>
