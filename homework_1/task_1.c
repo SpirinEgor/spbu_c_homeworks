@@ -17,11 +17,14 @@ void printSpiral(int matrix[n][n], int size)
   int stepsInOneDirection = 0;
   int c;
   int direction = 0; // 0 - left, 1 up, 2 right, 3 down
-  while (stepNumber < n * n - 1) {
+  while (stepNumber < n * n - 1)
+  {
     if (stepNumber % 2 == 0)
       stepsInOneDirection++;
-    for (c = 0; c < stepsInOneDirection * 2; c++) {
-      switch (direction) {
+    for (c = 0; c < stepsInOneDirection * 2; c++)
+    {
+      switch (direction)
+      {
       case LEFT:
         i--;
         break;
@@ -52,12 +55,14 @@ int main()
   int a[n][n];
   int i;
   int j;
-  for (i = 0; i < n; i++) {
+  for (i = 0; i < n; i++)
+  {
     for (j = 0; j < n; j++)
       a[i][j] = rand() % 20;
   }
   printSpiral(a, n);
-  for (i = 0; i < n; i++) {
+  for (i = 0; i < n; i++)
+  {
     for (j = 0; j < n; j++)
       printf("%d \t", a[i][j]);
     printf("\n");
