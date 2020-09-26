@@ -1,7 +1,7 @@
-#include <stdbool.h>
-#include <malloc.h>
-#include <stdio.h>
 #include "../../library/commonUtils/heap.h"
+#include <malloc.h>
+#include <stdbool.h>
+#include <stdio.h>
 
 bool findSeveralMax(int* numbers, int n, int* result)
 {
