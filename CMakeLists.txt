@@ -5,6 +5,7 @@ set(CMAKE_C_STANDARD 11)
 
 set(SOURCE_LIB
     library/commonUtils/numericOperations.c
+    library/commonUtils/heap.c
 )
 
 add_library(library ${SOURCE_LIB})
@@ -14,3 +15,4 @@ add_executable(hw1.2 homework_1/hw1.2/main.c)
 add_executable(hw1.3 homework_1/hw1.3/main.c)
 add_executable(hw1.4 homework_1/hw1.4/main.c)
 add_executable(hw1.5 homework_1/hw1.5/main.c)
+target_link_libraries(hw1.5 library)
