@@ -1,12 +1,6 @@
+#include "../../library/commonUtils/numericOperations.h"
 #include <malloc.h>
 #include <stdio.h>
-
-void swap(int* a, int* b)
-{
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
 
 void reverseArray(int* numbers, int first, int last)
 {
