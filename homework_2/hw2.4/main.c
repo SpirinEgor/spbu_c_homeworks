@@ -1,6 +1,6 @@
+#include "../../library/commonUtils/mysorts.h"
 #include "malloc.h"
 #include <stdio.h>
-#include "../../library/commonUtils/mysorts.h"
 
 void showNumerals(int* numerals, int n)
 {
