@@ -20,8 +20,7 @@ int factorialRecursive(int x)
 int factorialIterative(int x)
 {
     int factorial = 1;
-    for (int i = 2; i <= x; ++i)
-    {
+    for (int i = 2; i <= x; ++i) {
         factorial *= i;
     }
     return factorial;
