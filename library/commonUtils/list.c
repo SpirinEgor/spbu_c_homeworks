@@ -147,7 +147,7 @@ bool deleteByPosition(int position, List* list)
     }
 
     ListElement* iterator = head(list);
-    for(int i = 0; i < position; ++i)
+    for (int i = 0; i < position; ++i)
         iterator = iterator->next;
     iterator->prev->next = iterator->next;
     iterator->next->prev = iterator->prev;
