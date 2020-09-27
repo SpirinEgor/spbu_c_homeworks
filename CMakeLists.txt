@@ -7,3 +7,6 @@ set(SOURCE_LIB
     library/commonUtils/numericOperations.c
 )
 add_library(library ${SOURCE_LIB})
+
+add_executable(hw2.3 homework_2/hw2.3/main.c)
+target_link_libraries(hw2.3 library)
