@@ -34,15 +34,15 @@ int main()
 
     printf("Show position of last inserted element(5): %d\n", locate(newListElement, newList));
 
-    delete(0, newList);
+    deleteByPosition(0, newList);
     printf("First element deleted:\n");
     showList(newList);
 
-    delete(size(newList) - 1, newList);
+    deleteByPosition(size(newList) - 1, newList);
     printf("Last element deleted:\n");
     showList(newList);
 
-    delete(1, newList);
+    deleteByPosition(1, newList);
     printf("Element on 1st position deleted:\n");
     showList(newList);
 

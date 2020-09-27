@@ -17,13 +17,13 @@ typedef struct List
 
 ListElement* createListElement();
 List* createList();
-ListElement* tail(List *list);
-ListElement* head(List *list);
+ListElement* tail(List* list);
+ListElement* head(List* list);
 bool isEmpty(List* list);
 int size(List* list);
-bool insert(ListElement* value, int position, List *list);
+bool insert(ListElement* value, int position, List* list);
 void showList(List* list);
 ListElement retrieve(int position, List* list);
 int locate(ListElement* value, List* list);
-bool delete(int position, List* list);
+bool deleteByPosition(int position, List* list);
 void freeList(List* list);

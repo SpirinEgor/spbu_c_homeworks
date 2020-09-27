@@ -20,12 +20,12 @@ ListElement* createListElement(int newValue)
     return newListElement;
 }
 
-ListElement* tail(List *list)
+ListElement* tail(List* list)
 {
     return list->tail;
 }
 
-ListElement* head(List *list)
+ListElement* head(List* list)
 {
     return list->head;
 }
@@ -40,7 +40,7 @@ int size(List* list)
     return list->size;
 }
 
-bool insert(ListElement *value, int position, List *list)
+bool insert(ListElement* value, int position, List* list)
 {
     if (position > size(list))
         return false;
@@ -115,7 +115,7 @@ int locate(ListElement* value, List* list)
     return index;
 }
 
-bool delete(int position, List* list)
+bool deleteByPosition(int position, List* list)
 {
     if (position >= size(list))
         return false;
@@ -159,7 +159,7 @@ bool delete(int position, List* list)
 void freeList(List* list)
 {
     while (!isEmpty(list)) {
-        delete(0, list);
+        deleteByPosition(0, list);
     }
     free(list);
 }
