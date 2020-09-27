@@ -2,10 +2,11 @@
 #include "malloc.h"
 #include "stdio.h"
 
-void nullsToEnd(int* numbers, int n) {
+void nullsToEnd(int* numbers, int n)
+{
     for (int i = n - 1; i > 0; --i) { //bubblesort-like
         for (int j = 0; j < i; ++j) {
-            if (numbers[j] == 0 && numbers[j +1] != 0)
+            if (numbers[j] == 0 && numbers[j + 1] != 0)
                 swap(&numbers[j], &numbers[j + 1]);
         }
     }
@@ -26,8 +27,6 @@ int main()
     nullsToEnd(numbers, n);
 
     printf("Entered array with moved nulls:\n");
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
         printf("%d ", numbers[i]);
-    }
-
 }
