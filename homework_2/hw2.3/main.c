@@ -5,12 +5,12 @@
 void nullsToEnd(int* numbers, int n)
 {
     int rightNotNull = n - 1;
-    while (rightNotNull >= 0 && rightNotNull == 0) {
+    while (rightNotNull >= 0 && numbers[rightNotNull] == 0) {
         --rightNotNull;
     }
 
     int leftNull = 0;
-    while (leftNull < n && leftNull != 0) {
+    while (leftNull < n && numbers[leftNull] != 0) {
         ++leftNull;
     }
 
