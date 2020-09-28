@@ -5,17 +5,23 @@
 
 void showNumerals(int* numerals, int n)
 {
-    for (int i = 0; i < n; ++i) {
+    int i = 0;
+    while (numerals[i] == 0) {
+        ++i;
+    }
+    while (i < n) {
         printf("%d", numerals[i]);
+        ++i;
     }
 }
 
 void inputNumerals(int* numerals, int n)
 {
-    char tmp = 0;
-    for (int i = 0; i < n; ++i) {
-        tmp = getchar();
-        numerals[i] = tmp - '0';
+    int number = 0;
+    scanf("%d", &number);
+    for (int i = n - 1; i >= 0; --i) {
+        numerals[i] = number % 10;
+        number /= 10;
     }
 }
 
@@ -28,7 +34,7 @@ int main()
     char tmp = 0;
     printf("Enter the number :\n");
     int* numerals = calloc(n, sizeof(int));
-    memset(numerals, 0, n);
+    memset(numerals, 0, sizeof(int) * n);
 
     tmp = getchar();
     inputNumerals(numerals, n);
@@ -36,4 +42,5 @@ int main()
     showNumerals(numerals, n);
 
     free(numerals);
+    return 0;
 }

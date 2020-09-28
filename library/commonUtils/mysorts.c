@@ -1,5 +1,5 @@
 #include "mysorts.h"
-#include "malloc.h"
+#include "stdlib.h"
 
 void countingSort(int* numbers, int n, int first, int last)
 {
