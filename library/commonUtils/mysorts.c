@@ -1,5 +1,5 @@
 #include "mysorts.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 void countingSort(int* numbers, int n, int first, int last)
 {
@@ -21,4 +21,5 @@ void countingSort(int* numbers, int n, int first, int last)
         numbers[i] = first + j;
         counters[j]--;
     }
+    free(counters);
 }

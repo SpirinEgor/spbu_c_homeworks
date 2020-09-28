@@ -1,7 +1,6 @@
 #include "../../library/commonUtils/mysorts.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void showNumerals(int* numerals, int n)
 {
@@ -9,8 +8,14 @@ void showNumerals(int* numerals, int n)
     while (numerals[i] == 0) {
         ++i;
     }
+    int firstNumeral = i;
+    printf("%d", numerals[firstNumeral]);
+
+    i = 0;
     while (i < n) {
-        printf("%d", numerals[i]);
+        if (i != firstNumeral) {
+            printf("%d", numerals[i]);
+        }
         ++i;
     }
 }
@@ -33,7 +38,6 @@ int main()
 
     printf("Enter the number :\n");
     int* numerals = calloc(n, sizeof(int));
-    memset(numerals, 0, sizeof(int) * n);
 
     inputNumerals(numerals, n);
     countingSort(numerals, n, 0, 9);
