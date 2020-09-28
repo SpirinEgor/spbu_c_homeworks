@@ -1,5 +1,5 @@
 #include "cyclicList.h"
-#include "malloc.h"
+#include <stdlib.h>
 
 CyclicList* createCyclicList()
 {
