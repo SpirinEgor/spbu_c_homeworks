@@ -1,11 +1,13 @@
 #include "../../library/commonUtils/mysorts.h"
-#include "malloc.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void showNumerals(int* numerals, int n)
 {
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < n; ++i) {
         printf("%d", numerals[i]);
+    }
 }
 
 void inputNumerals(int* numerals, int n)
@@ -26,6 +28,7 @@ int main()
     char tmp = 0;
     printf("Enter the number :\n");
     int* numerals = calloc(n, sizeof(int));
+    memset(numerals, 0, n);
 
     tmp = getchar();
     inputNumerals(numerals, n);
