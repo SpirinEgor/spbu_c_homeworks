@@ -12,8 +12,9 @@ int max(int a, int b)
 
 int factorialRecursive(int x)
 {
-    if (x == 1)
+    if (x <= 1) {
         return 1;
+    }
     return x * factorialRecursive(x - 1);
 }
 
