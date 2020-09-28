@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void showPartitions(int* parts, int remainder, int previous)
 {
@@ -27,7 +26,6 @@ int main()
     scanf("%d", &n);
 
     int* parts = (int*)calloc(n + 1, sizeof(int));
-    memset(parts, 0, sizeof(int) * (n + 1));
     parts[0] = 1;
 
     printf("The entered number can be represented as :\n");
