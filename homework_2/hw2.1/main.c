@@ -27,7 +27,7 @@ int main()
     scanf("%d", &n);
 
     int* parts = (int*)calloc(n + 1, sizeof(int));
-    memset(parts, 0, n + 1);
+    memset(parts, 0, sizeof(int) * (n + 1));
     parts[0] = 1;
 
     printf("The entered number can be represented as :\n");
