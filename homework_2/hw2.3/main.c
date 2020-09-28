@@ -1,13 +1,27 @@
 #include "../../library/commonUtils/numericOperations.h"
-#include "malloc.h"
-#include "stdio.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void nullsToEnd(int* numbers, int n)
 {
-    for (int i = n - 1; i > 0; --i) { //bubblesort-like
-        for (int j = 0; j < i; ++j) {
-            if (numbers[j] == 0 && numbers[j + 1] != 0)
-                swap(&numbers[j], &numbers[j + 1]);
+    int rightNotNull = n - 1;
+    while (rightNotNull >= 0 && rightNotNull == 0) {
+        --rightNotNull;
+    }
+
+    int leftNull = 0;
+    while (leftNull < n && leftNull != 0) {
+        ++leftNull;
+    }
+
+    while (rightNotNull > leftNull) {
+        swap(&numbers[leftNull], &numbers[rightNotNull]);
+        while (rightNotNull >= 0 && numbers[rightNotNull] == 0) {
+            --rightNotNull;
+        }
+        while (leftNull < n && numbers[leftNull] != 0) {
+            ++leftNull;
         }
     }
 }
@@ -19,14 +33,18 @@ int main()
     scanf("%d", &n);
 
     int* numbers = (int*)calloc(n, sizeof(int));
+    memset(numbers, 0, sizeof(int) * n);
     printf("Enter the array:\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d", &numbers[i]);
     }
-
     nullsToEnd(numbers, n);
 
     printf("Entered array with moved nulls:\n");
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < n; ++i) {
         printf("%d ", numbers[i]);
+    }
+
+    free(numbers);
+    return 0;
 }
