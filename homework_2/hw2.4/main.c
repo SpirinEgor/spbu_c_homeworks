@@ -31,12 +31,10 @@ int main()
     printf("Enter the length of number :\n");
     scanf("%d", &n);
 
-    char tmp = 0;
     printf("Enter the number :\n");
     int* numerals = calloc(n, sizeof(int));
     memset(numerals, 0, sizeof(int) * n);
 
-    tmp = getchar();
     inputNumerals(numerals, n);
     countingSort(numerals, n, 0, 9);
     showNumerals(numerals, n);
