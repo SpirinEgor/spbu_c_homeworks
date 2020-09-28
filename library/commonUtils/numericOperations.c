@@ -10,6 +10,13 @@ int max(int a, int b)
     return a > b ? a : b;
 }
 
+void swap(int* a, int* b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
 int factorialRecursive(int x)
 {
     if (x <= 1) {
