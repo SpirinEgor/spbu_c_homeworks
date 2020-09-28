@@ -1,7 +1,6 @@
 #include "../../library/commonUtils/numericOperations.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void nullsToEnd(int* numbers, int n)
 {
@@ -33,7 +32,6 @@ int main()
     scanf("%d", &n);
 
     int* numbers = (int*)calloc(n, sizeof(int));
-    memset(numbers, 0, sizeof(int) * n);
     printf("Enter the array:\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d", &numbers[i]);
