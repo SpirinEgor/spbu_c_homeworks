@@ -1,6 +1,8 @@
+#include "../../library/commonUtils/numericOperations.h"
 #include "../../library/commonUtils/mysorts.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void showNumerals(int* numerals, int n)
 {
@@ -8,22 +10,19 @@ void showNumerals(int* numerals, int n)
     while (numerals[i] == 0) {
         ++i;
     }
-    int firstNumeral = i;
-    printf("%d", numerals[firstNumeral]);
+    swap(&numerals[i], &numerals[0]);
 
     i = 0;
     while (i < n) {
-        if (i != firstNumeral) {
-            printf("%d", numerals[i]);
-        }
+        printf("%d", numerals[i]);
         ++i;
     }
 }
 
 void inputNumerals(int* numerals, int n)
 {
-    int number = 0;
-    scanf("%d", &number);
+    char* number = (char*)calloc(n, sizeof(char));
+    scanf("%s", number);
     for (int i = n - 1; i >= 0; --i) {
         numerals[i] = number % 10;
         number /= 10;
