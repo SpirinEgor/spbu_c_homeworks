@@ -24,8 +24,7 @@ void inputNumerals(int* numerals, int n)
     char* number = (char*)calloc(n, sizeof(char));
     scanf("%s", number);
     for (int i = n - 1; i >= 0; --i) {
-        numerals[i] = number % 10;
-        number /= 10;
+        numerals[i] = number[i] - '0';
     }
 }
 
