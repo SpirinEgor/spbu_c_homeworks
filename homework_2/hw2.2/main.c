@@ -31,20 +31,20 @@ void generateNum(int* secretNum, int n)
 void getPlayerNum(int* playerNum, int n)
 {
     char* number = (char*)calloc(n, sizeof(char));
-    scanf("%s", number);
+    scanf("%10s", number);
     for (int i = 0; i < n; ++i) {
-        playerNum[i] = number[i] - '0';
+        playerNum[i] = (int)(number[i] - '0');
     }
     free(number);
 }
 
-bool countBullsAndCows(int* playerNum, int* secretNum, const int n)
+bool countBullsAndCows(int* playerNum, int* secretNum, int n)
 {
     int cowsCounter = 0;
     int bullsCounter = 0;
     const int numOfNumerals = 10;
 
-    bool* areChecked = malloc(numOfNumerals * sizeof(bool));
+    bool* areChecked = (bool*)malloc(numOfNumerals * sizeof(bool));
     memset(areChecked, false, numOfNumerals * sizeof(bool));
 
     for (int i = 0; i < n; ++i) {
