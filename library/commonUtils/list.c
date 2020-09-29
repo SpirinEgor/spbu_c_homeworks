@@ -2,19 +2,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct ListElement
+struct ListElement
 {
     int value;
     struct ListElement* next;
     struct ListElement* prev;
-} ListElement;
+};
 
-typedef struct List
+struct List
 {
     ListElement* head;
     ListElement* tail;
     int size;
-} List;
+};
 
 List* createList()
 {
