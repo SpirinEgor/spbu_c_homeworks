@@ -20,7 +20,7 @@ void increaseCurrentIndex(int increment, CyclicList* cyclicList)
 
 int getCurrentValue(CyclicList* cyclicList)
 {
-    return retrieve(cyclicList->currentIndex, cyclicList->list).value;
+    return getValue(retrieve(cyclicList->currentIndex, cyclicList->list));
 }
 
 bool deleteCurrent(CyclicList* cyclicList)
