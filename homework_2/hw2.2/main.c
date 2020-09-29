@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void generateNum(int* secretNum, const int n)
+void generateNum(int* secretNum, int n)
 {
     srand((unsigned int)time(NULL));
 
@@ -68,17 +68,24 @@ bool countBullsAndCows(int* playerNum, int* secretNum, const int n)
 
 int main()
 {
-    const int n = 4;
-    int secretNum[n];
+    int n = 0;
+    const int maxNumberOfDigits = 10;
+    const int minNumberOfDigits = 4;
+    printf("Enter amount of digits in secret number(from %d to %d):\n", minNumberOfDigits, maxNumberOfDigits);
+    do {
+        scanf("%d", &n);
+    } while (n < minNumberOfDigits || n > maxNumberOfDigits);
+    int* secretNum = calloc(n, sizeof(int));
 
     generateNum(secretNum, n);
 
     bool isFinished = false;
     int playerNum[n];
     while (!isFinished) {
-        printf("Enter a four-digit number :\n");
+        printf("Enter a number :\n");
         getPlayerNum(playerNum, n);
         isFinished = countBullsAndCows(playerNum, secretNum, n);
     }
     printf("Congratulations! You won!");
+    free(secretNum);
 }
