@@ -2,6 +2,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct ListElement
+{
+    int value;
+    struct ListElement* next;
+    struct ListElement* prev;
+} ListElement;
+
+typedef struct List
+{
+    ListElement* head;
+    ListElement* tail;
+    int size;
+} List;
+
 List* createList()
 {
     List* newList = calloc(1, sizeof(List));
@@ -18,6 +32,11 @@ ListElement* createListElement(int newValue)
     newListElement->next = NULL;
     newListElement->value = newValue;
     return newListElement;
+}
+
+int getValue(ListElement* listElement)
+{
+    return listElement->value;
 }
 
 ListElement* tail(List* list)
@@ -95,13 +114,13 @@ void showList(List* list)
     printf("\n");
 }
 
-ListElement retrieve(int position, List* list)
+ListElement* retrieve(int position, List* list)
 {
     ListElement* iterator = head(list);
     for (int i = 0; i < position; ++i) {
         iterator = iterator->next;
     }
-    return *iterator;
+    return iterator;
 }
 
 int locate(ListElement* value, List* list)

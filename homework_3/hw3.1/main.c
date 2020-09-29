@@ -30,7 +30,7 @@ int main()
     printf("Number '2' inserted in the beginning:\n");
     showList(newList);
 
-    printf("Show value on 3rd position: %d\n", retrieve(3, newList).value);
+    printf("Show value on 3rd position: %d\n", getValue(retrieve(3, newList)));
 
     printf("Show position of last inserted element(5): %d\n", locate(newListElement, newList));
 
