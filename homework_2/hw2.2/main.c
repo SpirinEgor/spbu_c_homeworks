@@ -4,14 +4,13 @@
 #include <string.h>
 #include <time.h>
 
+#define numOfNumerals 10
+
 void generateNum(int* secretNum, int n)
 {
     srand((unsigned int)time(NULL));
 
-    const int numOfNumerals = 10;
-    bool usedNumerals[numOfNumerals];
-    memset(usedNumerals, false, numOfNumerals * sizeof(bool));
-
+    bool usedNumerals[numOfNumerals] = { false };
     secretNum[0] = rand() % 9 + 1;
     usedNumerals[secretNum[0]] = true;
 
@@ -42,7 +41,6 @@ bool countBullsAndCows(int* playerNum, int* secretNum, int n)
 {
     int cowsCounter = 0;
     int bullsCounter = 0;
-    const int numOfNumerals = 10;
 
     bool* areChecked = (bool*)malloc(numOfNumerals * sizeof(bool));
     memset(areChecked, false, numOfNumerals * sizeof(bool));
