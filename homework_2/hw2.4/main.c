@@ -1,5 +1,5 @@
-#include "../../library/commonUtils/numericOperations.h"
 #include "../../library/commonUtils/mysorts.h"
+#include "../../library/commonUtils/numericOperations.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
