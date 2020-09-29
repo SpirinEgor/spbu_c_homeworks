@@ -1,6 +1,18 @@
 #include "list.h"
-#include "malloc.h"
 #include <stdio.h>
+#include <stdlib.h>
+
+struct ListElement {
+    int value;
+    struct ListElement* next;
+    struct ListElement* prev;
+};
+
+struct List {
+    ListElement* head;
+    ListElement* tail;
+    int size;
+};
 
 List* createList()
 {
@@ -18,6 +30,11 @@ ListElement* createListElement(int newValue)
     newListElement->next = NULL;
     newListElement->value = newValue;
     return newListElement;
+}
+
+int getValue(ListElement* listElement)
+{
+    return listElement->value;
 }
 
 ListElement* tail(List* list)
@@ -42,8 +59,9 @@ int size(List* list)
 
 bool insert(ListElement* value, int position, List* list)
 {
-    if (position > size(list))
+    if (position > size(list)) {
         return false;
+    }
 
     if (isEmpty(list)) {
         value->next = NULL;
@@ -94,12 +112,13 @@ void showList(List* list)
     printf("\n");
 }
 
-ListElement retrieve(int position, List* list)
+ListElement* retrieve(int position, List* list)
 {
     ListElement* iterator = head(list);
-    for (int i = 0; i < position; ++i)
+    for (int i = 0; i < position; ++i) {
         iterator = iterator->next;
-    return *iterator;
+    }
+    return iterator;
 }
 
 int locate(ListElement* value, List* list)
@@ -110,15 +129,17 @@ int locate(ListElement* value, List* list)
         iterator = iterator->next;
         ++index;
     }
-    if (index == size(list))
+    if (index == size(list)) {
         return -1;
+    }
     return index;
 }
 
 bool deleteByPosition(int position, List* list)
 {
-    if (position >= size(list))
+    if (position >= size(list)) {
         return false;
+    }
 
     if (size(list) == 1) {
         free(list->head);
@@ -147,8 +168,9 @@ bool deleteByPosition(int position, List* list)
     }
 
     ListElement* iterator = head(list);
-    for (int i = 0; i < position; ++i)
+    for (int i = 0; i < position; ++i) {
         iterator = iterator->next;
+    }
     iterator->prev->next = iterator->next;
     iterator->next->prev = iterator->prev;
     free(iterator);
