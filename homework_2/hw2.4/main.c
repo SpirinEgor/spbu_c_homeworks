@@ -26,6 +26,7 @@ void inputNumerals(int* numerals, int n)
     for (int i = n - 1; i >= 0; --i) {
         numerals[i] = number[i] - '0';
     }
+    free(number);
 }
 
 int main()
