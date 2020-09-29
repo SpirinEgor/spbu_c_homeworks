@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 void generateNum(int* secretNum, int n)
@@ -9,8 +10,7 @@ void generateNum(int* secretNum, int n)
 
     const int numOfNumerals = 10;
     bool usedNumerals[numOfNumerals];
-    for (int i = 0; i < numOfNumerals; ++i)
-        usedNumerals[i] = false;
+    memset(usedNumerals, false, numOfNumerals * sizeof(bool));
 
     secretNum[0] = rand() % 9 + 1;
     usedNumerals[secretNum[0]] = true;
@@ -19,8 +19,9 @@ void generateNum(int* secretNum, int n)
         secretNum[i] = rand() % (10 - i);
         int j = 0;
         while (j <= secretNum[i]) {
-            if (usedNumerals[j])
+            if (usedNumerals[j]) {
                 ++secretNum[i];
+            }
             ++j;
         }
         usedNumerals[secretNum[i]] = true;
@@ -29,12 +30,12 @@ void generateNum(int* secretNum, int n)
 
 void getPlayerNum(int* playerNum, int n)
 {
-    char tmp = 0;
+    char* number = (char*)calloc(n, sizeof(char));
+    scanf("%s", number);
     for (int i = 0; i < n; ++i) {
-        tmp = getchar();
-        playerNum[i] = tmp - '0';
+        playerNum[i] = number[i] - '0';
     }
-    tmp = getchar();
+    free(number);
 }
 
 bool countBullsAndCows(int* playerNum, int* secretNum, const int n)
@@ -44,9 +45,8 @@ bool countBullsAndCows(int* playerNum, int* secretNum, const int n)
     const int numOfNumerals = 10;
 
     bool* areChecked = malloc(numOfNumerals * sizeof(bool));
-    for (int i = 0; i < numOfNumerals; ++i) {
-        areChecked[i] = false;
-    }
+    memset(areChecked, false, numOfNumerals * sizeof(bool));
+
     for (int i = 0; i < n; ++i) {
         areChecked[secretNum[i]] = true;
     }
@@ -54,8 +54,7 @@ bool countBullsAndCows(int* playerNum, int* secretNum, const int n)
     for (int i = 0; i < n; ++i) {
         if (playerNum[i] == secretNum[i]) {
             bullsCounter++;
-        }
-        if (areChecked[playerNum[i]]) {
+        } else if (areChecked[playerNum[i]]) {
             cowsCounter++;
         }
     }
@@ -75,12 +74,12 @@ int main()
     do {
         scanf("%d", &n);
     } while (n < minNumberOfDigits || n > maxNumberOfDigits);
-    int* secretNum = calloc(n, sizeof(int));
+    int* secretNum = (int*)calloc(n, sizeof(int));
 
     generateNum(secretNum, n);
 
     bool isFinished = false;
-    int playerNum[n];
+    int* playerNum = (int*)calloc(n, sizeof(int));
     while (!isFinished) {
         printf("Enter a number :\n");
         getPlayerNum(playerNum, n);
@@ -88,4 +87,5 @@ int main()
     }
     printf("Congratulations! You won!");
     free(secretNum);
+    free(playerNum);
 }
