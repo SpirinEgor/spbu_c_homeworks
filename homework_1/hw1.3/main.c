@@ -1,6 +1,6 @@
-#include <malloc.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 const int MAX_SIZE = 100;

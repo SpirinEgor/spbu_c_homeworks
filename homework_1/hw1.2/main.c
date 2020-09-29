@@ -1,6 +1,6 @@
 #include "../../library/commonUtils/arrayOperations.h"
-#include <malloc.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {

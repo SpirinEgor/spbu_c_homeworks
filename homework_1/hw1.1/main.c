@@ -1,10 +1,10 @@
-#include <malloc.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void showBySpiral(int** numbers, int n)
 {
     const int firstIndex = n / 2;
-    printf("%d", numbers[firstIndex][firstIndex]);
+    printf("%d ", numbers[firstIndex][firstIndex]);
     int leftBorder = firstIndex;
     int upBorder = firstIndex - 1;
     int rightBorder = firstIndex;
