@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-#define numOfNumerals 10
+const int numOfNumerals = 10;
 
 void generateNum(int* secretNum, int n)
 {
@@ -29,12 +29,11 @@ void generateNum(int* secretNum, int n)
 
 void getPlayerNum(int* playerNum, int n)
 {
-    char* number = (char*)calloc(n + 1, sizeof(char));
+    char number[numOfNumerals + 1];
     scanf("%s", number);
     for (int i = 0; i < n; ++i) {
         playerNum[i] = (int)(number[i] - '0');
     }
-    free(number);
 }
 
 bool countBullsAndCows(int* playerNum, int* secretNum, int n)
