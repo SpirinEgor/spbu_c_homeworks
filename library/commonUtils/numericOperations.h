@@ -8,4 +8,6 @@ int factorialRecursive(int x);
 int factorialIterative(int x);
 void swap(int* a, int* b);
 
+void swap(int* a, int* b);
+
 #endif //SPBU_2020_C_NUMERICOPERATIONS_H
