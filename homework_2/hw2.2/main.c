@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-const int numOfNumerals = 10;
+#define numOfNumerals 10
 
 void generateNum(int* secretNum, int n)
 {
