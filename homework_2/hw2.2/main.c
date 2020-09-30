@@ -31,12 +31,11 @@ void getPlayerNum(int* playerNum, int n)
 {
     char number[numOfNumerals + 1] = { '\0' };
     scanf("%s", number);
-    int sizeOfNumber = strlen(number);
-    while (sizeOfNumber != n) {
+    while (strlen(number) != n) {
         printf("Wrong size of number! Try again:\n");
         scanf("%s", number);
     }
-    
+
     for (int i = 0; i < n; ++i) {
         playerNum[i] = (int)(number[i] - '0');
     }
