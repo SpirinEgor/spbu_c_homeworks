@@ -10,7 +10,7 @@ void generateNum(int* secretNum, int n)
 {
     srand((unsigned int)time(NULL));
 
-    bool usedNumerals[numOfNumerals] = {false};
+    bool usedNumerals[numOfNumerals] = { false };
     secretNum[0] = rand() % 9 + 1;
     usedNumerals[secretNum[0]] = true;
 
