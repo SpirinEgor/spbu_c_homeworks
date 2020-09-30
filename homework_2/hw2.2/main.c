@@ -29,8 +29,8 @@ void generateNum(int* secretNum, int n)
 
 void getPlayerNum(int* playerNum, int n)
 {
-    char* number = (char*)calloc(n, sizeof(char));
-    scanf("%10s", number);
+    char* number = (char*)calloc(n + 1, sizeof(char));
+    scanf("%s", number);
     for (int i = 0; i < n; ++i) {
         playerNum[i] = (int)(number[i] - '0');
     }
