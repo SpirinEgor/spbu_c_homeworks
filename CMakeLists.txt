@@ -8,6 +8,7 @@ set(SOURCE_LIB
 )
 add_library(library ${SOURCE_LIB})
 
+add_executable(hw2.2 homework_2/hw2.2/main.c)
 add_executable(hw2.1 homework_2/hw2.1/main.c)
 add_executable(hw2.3 homework_2/hw2.3/main.c)
 target_link_libraries(hw2.3 library)
