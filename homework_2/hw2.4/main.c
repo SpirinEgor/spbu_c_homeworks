@@ -21,7 +21,7 @@ void showNumerals(int* numerals, int n)
 
 void inputNumerals(int* numerals, int n)
 {
-    char* number = (char*)calloc(n, sizeof(char));
+    char* number = (char*)calloc(n + 1, sizeof(char));
     scanf("%s", number);
     for (int i = n - 1; i >= 0; --i) {
         numerals[i] = number[i] - '0';
