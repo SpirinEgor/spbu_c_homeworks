@@ -7,6 +7,7 @@ set(SOURCE_LIB
     library/commonUtils/numericOperations.c
     library/commonUtils/heap.c
     library/commonUtils/arrayOperations.c
+    library/commonUtils/mysorts.c
 )
 add_library(library ${SOURCE_LIB})
 
