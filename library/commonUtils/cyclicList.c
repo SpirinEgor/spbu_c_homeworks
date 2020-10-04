@@ -1,11 +1,26 @@
 #include "cyclicList.h"
 #include <stdlib.h>
 
+struct CyclicList {
+    List* list;
+    int currentIndex;
+};
+
 CyclicList* createCyclicList()
 {
     CyclicList* newCyclicList = calloc(1, sizeof(CyclicList));
     newCyclicList->list = createList();
     newCyclicList->currentIndex = -1;
+}
+
+bool insertCyclic(ListElement* value, int position, CyclicList* cyclicList)
+{
+    return insert(value, position, cyclicList->list);
+}
+
+int sizeCyclic(CyclicList* cyclicList)
+{
+    return size(cyclicList->list);
 }
 
 void updateCurrentIndex(CyclicList* cyclicList)
@@ -25,9 +40,11 @@ int getCurrentValue(CyclicList* cyclicList)
 
 bool deleteCurrent(CyclicList* cyclicList)
 {
-    deleteByPosition(cyclicList->currentIndex, cyclicList->list);
+    if (!deleteByPosition(cyclicList->currentIndex, cyclicList->list))
+        return false;
     --cyclicList->currentIndex;
     updateCurrentIndex(cyclicList);
+    return true;
 }
 
 void freeCyclicList(CyclicList* cyclicList)

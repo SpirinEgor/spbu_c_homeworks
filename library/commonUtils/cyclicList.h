@@ -3,13 +3,12 @@
 
 #include "list.h"
 
-typedef struct CyclicList
-{
-    List* list;
-    int currentIndex;
-} CyclicList;
+typedef struct CyclicList CyclicList;
 
 CyclicList* createCyclicList();
+
+bool insertCyclic(ListElement* value, int position, CyclicList* cyclicList);
+int sizeCyclic(CyclicList* cyclicList);
 
 void updateCurrentIndex(CyclicList* cyclicList);
 void increaseCurrentIndex(int increment, CyclicList* cyclicList);
