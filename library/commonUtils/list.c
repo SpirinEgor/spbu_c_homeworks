@@ -16,7 +16,7 @@ struct List {
 
 List* createList()
 {
-    List* newList = calloc(1, sizeof(List));
+    List* newList = malloc(sizeof(List));
     newList->head = NULL;
     newList->tail = NULL;
     newList->size = 0;
@@ -25,7 +25,7 @@ List* createList()
 
 ListElement* createListElement(int newValue)
 {
-    ListElement* newListElement = calloc(1, sizeof(ListElement));
+    ListElement* newListElement = malloc(sizeof(ListElement));
     newListElement->prev = NULL;
     newListElement->next = NULL;
     newListElement->value = newValue;
