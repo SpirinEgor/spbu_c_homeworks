@@ -52,14 +52,14 @@ bool isEmpty(List* list)
     return list->size == 0;
 }
 
-int size(List* list)
+int getSize(List* list)
 {
     return list->size;
 }
 
 bool insert(ListElement* value, int position, List* list)
 {
-    if (position > size(list)) {
+    if (position > getSize(list)) {
         return false;
     }
 
@@ -76,13 +76,13 @@ bool insert(ListElement* value, int position, List* list)
         head(list)->prev = value;
         value->next = head(list);
         list->head = value;
-        if (size(list) == 1)
+        if (getSize(list) == 1)
             list->tail = value->next;
         ++list->size;
         return true;
     }
 
-    if (position == size(list)) {
+    if (position == getSize(list)) {
         tail(list)->next = value;
         value->prev = tail(list);
         list->tail = value;
@@ -105,7 +105,7 @@ bool insert(ListElement* value, int position, List* list)
 void showList(List* list)
 {
     ListElement* iterator = list->head;
-    for (int i = 0; i < size(list); ++i) {
+    for (int i = 0; i < getSize(list); ++i) {
         printf("%d ", iterator->value);
         iterator = iterator->next;
     }
@@ -129,7 +129,7 @@ int locate(ListElement* value, List* list)
         iterator = iterator->next;
         ++index;
     }
-    if (index == size(list)) {
+    if (index == getSize(list)) {
         return -1;
     }
     return index;
@@ -137,11 +137,11 @@ int locate(ListElement* value, List* list)
 
 bool deleteByPosition(int position, List* list)
 {
-    if (position >= size(list) || position < 0) {
+    if (position >= getSize(list) || position < 0) {
         return false;
     }
 
-    if (size(list) == 1) {
+    if (getSize(list) == 1) {
         free(list->head);
         list->head = NULL;
         list->tail = NULL;
@@ -158,7 +158,7 @@ bool deleteByPosition(int position, List* list)
         return true;
     }
 
-    if (position == size(list) - 1) {
+    if (position == getSize(list) - 1) {
         tail(list)->prev->next = NULL;
         ListElement* tmp = tail(list);
         list->tail = tail(list)->prev;

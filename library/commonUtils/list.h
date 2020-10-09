@@ -12,7 +12,7 @@ List* createList();
 ListElement* tail(List* list);
 ListElement* head(List* list);
 bool isEmpty(List* list);
-int size(List* list);
+int getSize(List* list);
 bool insert(ListElement* value, int position, List* list);
 void showList(List* list);
 ListElement* retrieve(int position, List* list);
