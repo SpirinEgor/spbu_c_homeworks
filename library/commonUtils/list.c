@@ -59,7 +59,7 @@ int getSize(List* list)
 
 bool insert(ListElement* value, int position, List* list)
 {
-    if (position > getSize(list)) {
+    if (position > getSize(list) || position < 0) {
         return false;
     }
 
