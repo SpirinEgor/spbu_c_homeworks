@@ -117,11 +117,11 @@ ListElement* retrieve(int position, List* list)
     return iterator;
 }
 
-int locate(ListElement* value, List* list)
+int locate(ListElement* elementToFind, List* list)
 {
     ListElement* iterator = head(list);
     int index = 0;
-    while (iterator != 0 && iterator != value) {
+    while (iterator != NULL && iterator != elementToFind) {
         iterator = iterator->next;
         ++index;
     }
@@ -141,7 +141,7 @@ bool deleteByPosition(int position, List* list)
         free(list->head);
         list->head = NULL;
         list->tail = NULL;
-        list->size-;
+        list->size--;
         return true;
     }
 
