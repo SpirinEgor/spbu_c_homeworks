@@ -147,18 +147,18 @@ bool deleteByPosition(int position, List* list)
 
     if (position == 0) {
         head(list)->next->prev = NULL;
-        ListElement* tmp = head(list);
+        ListElement* toDelete = head(list);
         list->head = head(list)->next;
-        free(tmp);
+        free(toDelete);
         list->size--;
         return true;
     }
 
     if (position == getSize(list) - 1) {
         tail(list)->prev->next = NULL;
-        ListElement* tmp = tail(list);
+        ListElement* toDelete = tail(list);
         list->tail = tail(list)->prev;
-        free(tmp);
+        free(toDelete);
         list->size--;
         return true;
     }
