@@ -11,6 +11,7 @@ CyclicList* createCyclicList()
     CyclicList* newCyclicList = malloc(sizeof(CyclicList));
     newCyclicList->list = createList();
     newCyclicList->currentIndex = -1;
+    return newCyclicList;
 }
 
 bool insertCyclic(ListElement* newElement, int position, CyclicList* cyclicList)
@@ -42,7 +43,7 @@ bool deleteCurrent(CyclicList* cyclicList)
 {
     if (!deleteByPosition(cyclicList->currentIndex, cyclicList->list))
         return false;
-    --cyclicList->currentIndex;
+    cyclicList->currentIndex--;
     updateCurrentIndex(cyclicList);
     return true;
 }
