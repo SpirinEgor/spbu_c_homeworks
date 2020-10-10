@@ -57,9 +57,14 @@ int getSize(List* list)
     return list->size;
 }
 
+bool isCorrectPosition(int position, int minPosition, int maxPosition)
+{
+    return (position <= maxPosition && position >= minPosition);
+}
+
 bool insert(ListElement* newElement, int position, List* list)
 {
-    if (position > getSize(list) || position < 0) {
+    if (!isCorrectPosition(position, 0, getSize(list))) {
         return false;
     }
 
@@ -110,7 +115,7 @@ void showList(List* list)
 
 ListElement* retrieve(int position, List* list)
 {
-    if (position < 0 || position >= getSize(list))
+    if (!isCorrectPosition(position, 0, getSize(list) - 1))
         return NULL;
 
     ListElement* iterator = head(list);
