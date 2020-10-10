@@ -94,7 +94,7 @@ bool insert(ListElement* newElement, int position, List* list)
     newElement->prev = iterator->prev;
     iterator->prev = newElement;
     newElement->next = iterator;
-    list->size++    ;
+    list->size++;
     return true;
 }
 
