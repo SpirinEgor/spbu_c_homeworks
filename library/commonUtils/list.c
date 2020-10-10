@@ -57,36 +57,32 @@ int getSize(List* list)
     return list->size;
 }
 
-bool insert(ListElement* value, int position, List* list)
+bool insert(ListElement* newElement, int position, List* list)
 {
     if (position > getSize(list) || position < 0) {
         return false;
     }
 
     if (isEmpty(list)) {
-        value->next = NULL;
-        value->prev = NULL;
-        list->tail = value;
-        list->head = value;
-        ++list->size;
+        list->tail = newElement;
+        list->head = newElement;
+        list->size++;
         return true;
     }
 
     if (position == 0) {
-        head(list)->prev = value;
-        value->next = head(list);
-        list->head = value;
-        if (getSize(list) == 1)
-            list->tail = value->next;
-        ++list->size;
+        head(list)->prev = newElement;
+        newElement->next = head(list);
+        list->head = newElement;
+        list->size++;
         return true;
     }
 
     if (position == getSize(list)) {
-        tail(list)->next = value;
-        value->prev = tail(list);
-        list->tail = value;
-        ++list->size;
+        tail(list)->next = newElement;
+        newElement->prev = tail(list);
+        list->tail = newElement;
+        list->size++;
         return true;
     }
 
@@ -94,11 +90,11 @@ bool insert(ListElement* value, int position, List* list)
     for (int i = 0; i < position; ++i) {
         iterator = iterator->next;
     }
-    iterator->prev->next = value;
-    value->prev = iterator->prev;
-    iterator->prev = value;
-    value->next = iterator;
-    ++list->size;
+    iterator->prev->next = newElement;
+    newElement->prev = iterator->prev;
+    iterator->prev = newElement;
+    newElement->next = iterator;
+    list->size++    ;
     return true;
 }
 
@@ -145,7 +141,7 @@ bool deleteByPosition(int position, List* list)
         free(list->head);
         list->head = NULL;
         list->tail = NULL;
-        --list->size;
+        list->size-;
         return true;
     }
 
@@ -154,7 +150,7 @@ bool deleteByPosition(int position, List* list)
         ListElement* tmp = head(list);
         list->head = head(list)->next;
         free(tmp);
-        --list->size;
+        list->size--;
         return true;
     }
 
@@ -163,7 +159,7 @@ bool deleteByPosition(int position, List* list)
         ListElement* tmp = tail(list);
         list->tail = tail(list)->prev;
         free(tmp);
-        --list->size;
+        list->size--;
         return true;
     }
 
@@ -174,7 +170,7 @@ bool deleteByPosition(int position, List* list)
     iterator->prev->next = iterator->next;
     iterator->next->prev = iterator->prev;
     free(iterator);
-    --list->size;
+    list->size--;
     return true;
 }
 
