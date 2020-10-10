@@ -7,7 +7,7 @@ typedef struct CyclicList CyclicList;
 
 CyclicList* createCyclicList();
 
-bool insertCyclic(ListElement* value, int position, CyclicList* cyclicList);
+bool insertCyclic(ListElement* newElement, int position, CyclicList* cyclicList);
 int sizeCyclic(CyclicList* cyclicList);
 
 void updateCurrentIndex(CyclicList* cyclicList);

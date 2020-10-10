@@ -8,14 +8,14 @@ struct CyclicList {
 
 CyclicList* createCyclicList()
 {
-    CyclicList* newCyclicList = calloc(1, sizeof(CyclicList));
+    CyclicList* newCyclicList = malloc(sizeof(CyclicList));
     newCyclicList->list = createList();
     newCyclicList->currentIndex = -1;
 }
 
-bool insertCyclic(ListElement* value, int position, CyclicList* cyclicList)
+bool insertCyclic(ListElement* newElement, int position, CyclicList* cyclicList)
 {
-    return insert(value, position, cyclicList->list);
+    return insert(newElement, position, cyclicList->list);
 }
 
 int sizeCyclic(CyclicList* cyclicList)
