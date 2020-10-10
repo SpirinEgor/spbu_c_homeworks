@@ -15,10 +15,10 @@ int main()
     ListElement* newWarrior = NULL;
     for (int i = 0; i < n; ++i) {
         newWarrior = createListElement(i + 1);
-        insertCyclic(newWarrior, sizeCyclic(warriors), warriors);
+        insertCyclic(newWarrior, getSizeCyclic(warriors), warriors);
     }
 
-    while (sizeCyclic(warriors) > 1) {
+    while (getSizeCyclic(warriors) > 1) {
         increaseCurrentIndex(m, warriors);
         deleteCurrent(warriors);
     }

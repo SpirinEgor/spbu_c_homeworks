@@ -18,19 +18,19 @@ bool insertCyclic(ListElement* newElement, int position, CyclicList* cyclicList)
     return insert(newElement, position, cyclicList->list);
 }
 
-int sizeCyclic(CyclicList* cyclicList)
+int getSizeCyclic(CyclicList* cyclicList)
 {
-    return size(cyclicList->list);
+    return getSize(cyclicList->list);
 }
 
 void updateCurrentIndex(CyclicList* cyclicList)
 {
-    cyclicList->currentIndex = cyclicList->currentIndex % size(cyclicList->list);
+    cyclicList->currentIndex = cyclicList->currentIndex % getSize(cyclicList->list);
 }
 
 void increaseCurrentIndex(int increment, CyclicList* cyclicList)
 {
-    cyclicList->currentIndex = (cyclicList->currentIndex + increment) % size(cyclicList->list);
+    cyclicList->currentIndex = (cyclicList->currentIndex + increment) % getSize(cyclicList->list);
 }
 
 int getCurrentValue(CyclicList* cyclicList)
