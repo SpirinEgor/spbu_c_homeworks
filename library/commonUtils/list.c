@@ -110,6 +110,9 @@ void showList(List* list)
 
 ListElement* retrieve(int position, List* list)
 {
+    if (position < 0 || position >= getSize(list))
+        return NULL;
+
     ListElement* iterator = head(list);
     for (int i = 0; i < position; ++i) {
         iterator = iterator->next;
