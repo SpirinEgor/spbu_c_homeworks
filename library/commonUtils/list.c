@@ -141,7 +141,7 @@ int locate(ListElement* elementToFind, List* list)
 
 bool deleteByPosition(int position, List* list)
 {
-    if (position >= getSize(list) || position < 0) {
+    if (!isCorrectPosition(position, 0, getSize(list) - 1)) {
         return false;
     }
 
