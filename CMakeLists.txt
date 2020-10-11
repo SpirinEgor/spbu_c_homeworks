@@ -5,6 +5,7 @@ set(CMAKE_C_STANDARD 11)
 
 set(SOURCE_LIB
     library/commonUtils/numericOperations.c
+    library/commonUtils/list.c
     library/commonUtils/heap.c
     library/commonUtils/arrayOperations.c
     library/commonUtils/mysorts.c
@@ -27,3 +28,6 @@ add_executable(hw2.4 homework_2/hw2.4/main.c)
 target_link_libraries(hw2.4 library)
 add_executable(hw2.5 homework_2/hw2.5/main.c)
 target_link_libraries(hw2.5 library)
+
+add_executable(hw3.1 homework_3/hw3.1/main.c)
+target_link_libraries(hw3.1 library)
